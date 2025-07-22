@@ -87,7 +87,11 @@
     </style>
   </head>
   <body>
+    <!-- form will submit to this page action="/data.html" -->
     <form action="/data.html">
+      <!-- input field for name -->
+      <!-- here I am using for in label and id in input field same because if the -->
+      <!-- user selects either label or input field it will select the input field -->
       <div>
         <label for="" name>Name</label>
         <input type="text" id="name" placeholder="Enter name" required="true" />
@@ -121,6 +125,7 @@
       <div>
         <label for="gender">Gender</label>
         <select id="gender" required>
+          <!-- first option is disabled used for display purpose so no value -->
           <option value="" selected>select from here...</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
@@ -128,6 +133,8 @@
         </select>
       </div>
       <!-- radio buttons -->
+      <!-- using name="subscription" for all fields because only one of the above -->
+      <!-- field should be selected if we select one the other should be unselected -->
       <div>
         <h2>Subscription Plan</h2>
         <input type="radio" id="basic" name="subscription" value="basic" />
