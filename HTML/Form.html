@@ -4,6 +4,87 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f2f2f2;
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+      }
+
+      form {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 500px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      div {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 500;
+        color: #333;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="password"],
+      input[type="date"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      select:invalid {
+        color: #888;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-right: 8px;
+      }
+
+      textarea {
+        resize: vertical;
+      }
+
+      button[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        transition: background-color 0.2s ease-in-out;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
   </head>
   <body>
     <form action="/data.html">
@@ -28,13 +109,46 @@
           required
         />
       </div>
-      <h2>Subscription Plan</h2>
-      <label for="basic">Basic</label>
-      <input type="radio" id="basic" name="subscription" value="basic" />
-      <label for="premium">Premium</label>
-      <input type="radio" id="premium" name="subscription" value="premium" />
-      <label for="vip">VIP</label>
-      <input type="radio" id="vip" name="subscription" value="VIP" />
+      <div>
+        <label for="dob">Date of birth</label>
+        <input type="date" id="dob" required />
+      </div>
+
+      <div>
+        <label for="gender">Gender</label>
+        <select id="gender" required>
+          <option value="" selected>select from here...</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div>
+        <h2>Subscription Plan</h2>
+        <input type="radio" id="basic" name="subscription" value="basic" />
+        <label for="basic">Basic</label>
+        <input type="radio" id="premium" name="subscription" value="premium" />
+        <label for="premium">Premium</label>
+        <input type="radio" id="vip" name="subscription" value="VIP" />
+        <label for="vip">VIP</label>
+      </div>
+
+      <div>
+        <input id="terms" type="checkbox" required />
+        <label for="terms">I agree to the terms and conditions</label>
+      </div>
+
+      <div>
+        <label for="comments">Comments</label>
+        <textarea
+          id="comments"
+          placeholder="Enter your comments"
+          rows="4"
+        ></textarea>
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
     </form>
   </body>
 </html>
