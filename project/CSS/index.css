@@ -8,11 +8,16 @@ body {
   font-family: sans-serif;
 }
 
-header {
+header div {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .header-logo {
   height: 1.7rem;
+}
+
+.search-field {
+  width: 30%;
 }
